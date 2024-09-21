@@ -1,0 +1,484 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class AnalogOutput | Bonsai - DAQmx </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class AnalogOutput | Bonsai - DAQmx ">
+      
+      <meta name="description" content="Represents an operator that generates voltage signals in one or more DAQmx analog output channels from a sequence of sample buffers.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/banchan86/daqmx_docs/blob/docfx-update/docs/apidoc/Bonsai_DAQmx_AnalogOutput.md/#L2">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Bonsai - DAQmx">
+            Bonsai - DAQmx
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Bonsai.DAQmx.AnalogOutput">
+
+
+
+  <h1 id="Bonsai_DAQmx_AnalogOutput" data-uid="Bonsai.DAQmx.AnalogOutput" class="text-break">
+Class AnalogOutput  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/AnalogOutput.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Bonsai.html">Bonsai</a>.<a class="xref" href="Bonsai.DAQmx.html">DAQmx</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Bonsai.DAQmx.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents an operator that generates voltage signals in one or more DAQmx analog
+output channels from a sequence of sample buffers.</p>
+</div>
+  <div class="markdown conceptual">
+<p><a class="xref" href="Bonsai.DAQmx.AnalogOutput.html"><code>AnalogOutput</code></a> configures and starts a task for generating voltage signals in one or more physical analog output channels. Voltage samples for each channel are read from sample buffers in the source sequence, where each row corresponds to one of the channels in the signal generation task, and each column to a sample from each of the channels. The order of the channels follows the order in which you specify the channels in the <a class="xref" href="Bonsai.DAQmx.AnalogOutput.html#Bonsai_DAQmx_AnalogOutput_Channels"><code>Channels</code></a> property.</p>
+<p>Signals can be generated continuously, where a ring buffer is constanty updated with new data arriving from the source sequence.</p>
+<div class="workflow"><p><img src="../workflows/AnalogOutput-Continuous.bonsai" alt="AnalogOutput-Continuous"></p>
+</div>
+<p>Alternatively, signals can also be generated with a finite number of samples, in which case the input buffers will provide samples until the specified buffer size is reached. In this case, the operator will wait for the task to finish generating the specified number of samples.</p>
+<div class="workflow"><p><img src="../workflows/AnalogOutput-Finite.bonsai" alt="AnalogOutput-Finite"></p>
+</div>
+</div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class AnalogOutput : Sink&lt;Mat&gt;</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Combinator-2.html">Combinator</a>&lt;<a class="xref" href="https://horizongir.github.io/opencv.net/api/OpenCV.Net.Mat.html">Mat</a>, <a class="xref" href="https://horizongir.github.io/opencv.net/api/OpenCV.Net.Mat.html">Mat</a>&gt;</div>
+      <div><a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Sink-1.html">Sink</a>&lt;<a class="xref" href="https://horizongir.github.io/opencv.net/api/OpenCV.Net.Mat.html">Mat</a>&gt;</div>
+      <div><span class="xref">AnalogOutput</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iobservable-1">Combinator&lt;Mat, Mat&gt;.Process(IObservable&lt;Mat&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Bonsai_DAQmx_AnalogOutput_ActiveEdge_" data-uid="Bonsai.DAQmx.AnalogOutput.ActiveEdge*"></a>
+
+  <h3 id="Bonsai_DAQmx_AnalogOutput_ActiveEdge" data-uid="Bonsai.DAQmx.AnalogOutput.ActiveEdge">
+  ActiveEdge
+  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/AnalogOutput.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a value specifying on which edge of a clock pulse sampling takes place.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SampleClockActiveEdge ActiveEdge { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SampleClockActiveEdge</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_DAQmx_AnalogOutput_BufferSize_" data-uid="Bonsai.DAQmx.AnalogOutput.BufferSize*"></a>
+
+  <h3 id="Bonsai_DAQmx_AnalogOutput_BufferSize" data-uid="Bonsai.DAQmx.AnalogOutput.BufferSize">
+  BufferSize
+  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/AnalogOutput.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the number of samples to generate, for finite samples, or the
+size of the buffer for continuous signal generation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int BufferSize { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_DAQmx_AnalogOutput_Channels_" data-uid="Bonsai.DAQmx.AnalogOutput.Channels*"></a>
+
+  <h3 id="Bonsai_DAQmx_AnalogOutput_Channels" data-uid="Bonsai.DAQmx.AnalogOutput.Channels">
+  Channels
+  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/AnalogOutput.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the collection of analog output channels used to generate voltage signals.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Collection&lt;AnalogOutputChannelConfiguration&gt; Channels { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.collection-1">Collection</a>&lt;<a class="xref" href="Bonsai.DAQmx.AnalogOutputChannelConfiguration.html">AnalogOutputChannelConfiguration</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_DAQmx_AnalogOutput_SampleMode_" data-uid="Bonsai.DAQmx.AnalogOutput.SampleMode*"></a>
+
+  <h3 id="Bonsai_DAQmx_AnalogOutput_SampleMode" data-uid="Bonsai.DAQmx.AnalogOutput.SampleMode">
+  SampleMode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/AnalogOutput.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a value specifying whether the signal generation task will generate
+a finite number of samples or if it continuously generates samples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SampleQuantityMode SampleMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SampleQuantityMode</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_DAQmx_AnalogOutput_SampleRate_" data-uid="Bonsai.DAQmx.AnalogOutput.SampleRate*"></a>
+
+  <h3 id="Bonsai_DAQmx_AnalogOutput_SampleRate" data-uid="Bonsai.DAQmx.AnalogOutput.SampleRate">
+  SampleRate
+  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/AnalogOutput.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the sampling rate for generating voltage signals, in samples
+per second.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double SampleRate { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_DAQmx_AnalogOutput_SignalSource_" data-uid="Bonsai.DAQmx.AnalogOutput.SignalSource*"></a>
+
+  <h3 id="Bonsai_DAQmx_AnalogOutput_SignalSource" data-uid="Bonsai.DAQmx.AnalogOutput.SignalSource">
+  SignalSource
+  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/AnalogOutput.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the optional source terminal of the clock. If not specified,
+the internal clock of the device will be used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SignalSource { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Bonsai_DAQmx_AnalogOutput_Process_" data-uid="Bonsai.DAQmx.AnalogOutput.Process*"></a>
+
+  <h3 id="Bonsai_DAQmx_AnalogOutput_Process_System_IObservable_OpenCV_Net_Mat__" data-uid="Bonsai.DAQmx.AnalogOutput.Process(System.IObservable{OpenCV.Net.Mat})">
+  Process(IObservable&lt;Mat&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/AnalogOutput.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generates voltage signals in one or more DAQmx analog output channels
+from an observable sequence of sample buffers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IObservable&lt;Mat&gt; Process(IObservable&lt;Mat&gt; source)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;<a class="xref" href="https://horizongir.github.io/opencv.net/api/OpenCV.Net.Mat.html">Mat</a>&gt;</dt>
+    <dd><p>A sequence of 2D <a class="xref" href="https://horizongir.github.io/opencv.net/api/OpenCV.Net.Mat.html">Mat</a> objects storing the voltage samples.
+Each row corresponds to one of the channels in the signal generation task,
+and each column to a sample from each of the channels. The order of the
+channels follows the order in which you specify the channels in the
+<a class="xref" href="Bonsai.DAQmx.AnalogOutput.html#Bonsai_DAQmx_AnalogOutput_Channels">Channels</a> property.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;<a class="xref" href="https://horizongir.github.io/opencv.net/api/OpenCV.Net.Mat.html">Mat</a>&gt;</dt>
+    <dd><p>An observable sequence that is identical to the <code class="paramref">source</code>
+sequence but where there is an additional side effect of generating
+voltage signals in one or more DAQmx analog output channels.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_DAQmx_AnalogOutput_Process_" data-uid="Bonsai.DAQmx.AnalogOutput.Process*"></a>
+
+  <h3 id="Bonsai_DAQmx_AnalogOutput_Process_System_IObservable_System_Double__" data-uid="Bonsai.DAQmx.AnalogOutput.Process(System.IObservable{System.Double})">
+  Process(IObservable&lt;double&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/AnalogOutput.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generates a voltage signal in one or more DAQmx analog output channels
+from an observable sequence of samples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IObservable&lt;double&gt; Process(IObservable&lt;double&gt; source)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>&gt;</dt>
+    <dd><p>A sequence of floating-point numbers representing the samples used to
+generate voltage signals.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>&gt;</dt>
+    <dd><p>An observable sequence that is identical to the <code class="paramref">source</code>
+sequence but where there is an additional side effect of generating
+voltage signals in one or more DAQmx analog output channels.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/AnalogOutput.cs/#L16" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          &copy; 2024 Bonsai Foundation CIC and Contributors. Made with <a href="https://dotnet.github.io/docfx">docfx</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

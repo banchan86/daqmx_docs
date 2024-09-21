@@ -1,0 +1,398 @@
+{
+  "source_base_path": "D:/a/daqmx_docs/daqmx_docs/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.DAQmx.AnalogChannelConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.DAQmx.AnalogChannelConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.DAQmx.AnalogInput.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.DAQmx.AnalogInput.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.DAQmx.AnalogInputChannelConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.DAQmx.AnalogInputChannelConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.DAQmx.AnalogOutput.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.DAQmx.AnalogOutput.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.DAQmx.AnalogOutputChannelConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.DAQmx.AnalogOutputChannelConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.DAQmx.DigitalChannelConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.DAQmx.DigitalChannelConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.DAQmx.DigitalInput.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.DAQmx.DigitalInput.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.DAQmx.DigitalInputChannelConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.DAQmx.DigitalInputChannelConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.DAQmx.DigitalOutput.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.DAQmx.DigitalOutput.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.DAQmx.DigitalOutputChannelConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.DAQmx.DigitalOutputChannelConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Bonsai.DAQmx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Bonsai.DAQmx.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/manual.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/manual.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "bonsai/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "bonsai/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "favicon.ico"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "logo.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/AnalogInput-Async.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/AnalogInput-Async.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/AnalogInput-Async.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/AnalogInput-Async.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/AnalogInput-Sync.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/AnalogInput-Sync.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/AnalogInput-Sync.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/AnalogInput-Sync.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/AnalogOutput-Continuous.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/AnalogOutput-Continuous.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/AnalogOutput-Continuous.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/AnalogOutput-Continuous.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/AnalogOutput-Finite.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/AnalogOutput-Finite.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/AnalogOutput-Finite.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/AnalogOutput-Finite.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/DigitalInput-Async.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/DigitalInput-Async.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/DigitalInput-Async.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/DigitalInput-Async.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/DigitalInput-Sync.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/DigitalInput-Sync.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/DigitalInput-Sync.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/DigitalInput-Sync.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/DigitalOutput-Continuous.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/DigitalOutput-Continuous.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/DigitalOutput-Continuous.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/DigitalOutput-Continuous.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/DigitalOutput-ContinuousSingleSample.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/DigitalOutput-ContinuousSingleSample.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/DigitalOutput-ContinuousSingleSample.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/DigitalOutput-ContinuousSingleSample.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/DigitalOutput-Finite.bonsai",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/DigitalOutput-Finite.bonsai"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "workflows/DigitalOutput-Finite.svg",
+      "output": {
+        "resource": {
+          "relative_path": "workflows/DigitalOutput-Finite.svg"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

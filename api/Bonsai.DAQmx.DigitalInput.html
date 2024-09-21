@@ -1,0 +1,518 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class DigitalInput | Bonsai - DAQmx </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class DigitalInput | Bonsai - DAQmx ">
+      
+      <meta name="description" content="Represents an operator that reads a sequence of logical values from one or more DAQmx digital input lines.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/banchan86/daqmx_docs/blob/docfx-update/docs/apidoc/Bonsai_DAQmx_DigitalInput.md/#L2">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Bonsai - DAQmx">
+            Bonsai - DAQmx
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Bonsai.DAQmx.DigitalInput">
+
+
+
+  <h1 id="Bonsai_DAQmx_DigitalInput" data-uid="Bonsai.DAQmx.DigitalInput" class="text-break">
+Class DigitalInput  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/DigitalInput.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Bonsai.html">Bonsai</a>.<a class="xref" href="Bonsai.DAQmx.html">DAQmx</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Bonsai.DAQmx.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents an operator that reads a sequence of logical values from
+one or more DAQmx digital input lines.</p>
+</div>
+  <div class="markdown conceptual">
+<p><a class="xref" href="Bonsai.DAQmx.DigitalInput.html"><code>DigitalInput</code></a> configures and starts a data acquisition task for sampling logical values from one or more digital input lines. Logical values will be collected in a sample buffer, where each sample can represent either a single line or a bitmask representing the state of all digital lines in a single port, depending on the configuration of the virtual channel. Each row corresponds to a channel in the acquisition task, and each column to a sample from each of the channels. The order of the channels in the sample buffer follows the order in which you specify the channels in the <a class="xref" href="Bonsai.DAQmx.DigitalInput.html#Bonsai_DAQmx_DigitalInput_Channels"><code>Channels</code></a> property.</p>
+<p>Digital lines can be grouped as a port when creating the local virtual channel, either by specifying a range of lines (e.g. <code>Dev1/port0/line0:3</code>) or by specifying an entire port at once (e.g. <code>Dev1/port0</code>).</p>
+<p>If no input source is specified, samples will be collected asynchronously every time a new buffer is filled.</p>
+<div class="workflow"><p><img src="../workflows/DigitalInput-Async.bonsai" alt="DigitalInput-Async"></p>
+</div>
+<p>Alternatively, if an input observable sequence is provided, a new sample buffer will be collected every time a new notification is emitted by the input source.</p>
+<div class="workflow"><p><img src="../workflows/DigitalInput-Sync.bonsai" alt="DigitalInput-Sync"></p>
+</div>
+</div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DigitalInput : Source&lt;Mat&gt;</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://bonsai-rx.org/docs/api/Bonsai.Source-1.html">Source</a>&lt;<a class="xref" href="https://horizongir.github.io/opencv.net/api/OpenCV.Net.Mat.html">Mat</a>&gt;</div>
+      <div><span class="xref">DigitalInput</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Bonsai_DAQmx_DigitalInput_ActiveEdge_" data-uid="Bonsai.DAQmx.DigitalInput.ActiveEdge*"></a>
+
+  <h3 id="Bonsai_DAQmx_DigitalInput_ActiveEdge" data-uid="Bonsai.DAQmx.DigitalInput.ActiveEdge">
+  ActiveEdge
+  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/DigitalInput.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a value specifying on which edge of a clock pulse sampling takes place.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SampleClockActiveEdge ActiveEdge { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SampleClockActiveEdge</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_DAQmx_DigitalInput_BufferSize_" data-uid="Bonsai.DAQmx.DigitalInput.BufferSize*"></a>
+
+  <h3 id="Bonsai_DAQmx_DigitalInput_BufferSize" data-uid="Bonsai.DAQmx.DigitalInput.BufferSize">
+  BufferSize
+  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/DigitalInput.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the number of samples to acquire, for finite samples, or the
+size of the buffer for continuous sampling.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int BufferSize { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_DAQmx_DigitalInput_Channels_" data-uid="Bonsai.DAQmx.DigitalInput.Channels*"></a>
+
+  <h3 id="Bonsai_DAQmx_DigitalInput_Channels" data-uid="Bonsai.DAQmx.DigitalInput.Channels">
+  Channels
+  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/DigitalInput.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the collection of virtual input channels from which to read logical values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Collection&lt;DigitalInputChannelConfiguration&gt; Channels { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.collection-1">Collection</a>&lt;<a class="xref" href="Bonsai.DAQmx.DigitalInputChannelConfiguration.html">DigitalInputChannelConfiguration</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_DAQmx_DigitalInput_SampleMode_" data-uid="Bonsai.DAQmx.DigitalInput.SampleMode*"></a>
+
+  <h3 id="Bonsai_DAQmx_DigitalInput_SampleMode" data-uid="Bonsai.DAQmx.DigitalInput.SampleMode">
+  SampleMode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/DigitalInput.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a value specifying whether the acquisition task will acquire
+a finite number of samples or if it continuously acquires samples.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SampleQuantityMode SampleMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SampleQuantityMode</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_DAQmx_DigitalInput_SampleRate_" data-uid="Bonsai.DAQmx.DigitalInput.SampleRate*"></a>
+
+  <h3 id="Bonsai_DAQmx_DigitalInput_SampleRate" data-uid="Bonsai.DAQmx.DigitalInput.SampleRate">
+  SampleRate
+  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/DigitalInput.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the sampling rate for reading logical values, in samples
+per second.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double SampleRate { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_DAQmx_DigitalInput_SamplesPerChannel_" data-uid="Bonsai.DAQmx.DigitalInput.SamplesPerChannel*"></a>
+
+  <h3 id="Bonsai_DAQmx_DigitalInput_SamplesPerChannel" data-uid="Bonsai.DAQmx.DigitalInput.SamplesPerChannel">
+  SamplesPerChannel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/DigitalInput.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the number of samples per channel in each output buffer.
+If not specified, the number of samples will be set to the size of the buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? SamplesPerChannel { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Bonsai_DAQmx_DigitalInput_SignalSource_" data-uid="Bonsai.DAQmx.DigitalInput.SignalSource*"></a>
+
+  <h3 id="Bonsai_DAQmx_DigitalInput_SignalSource" data-uid="Bonsai.DAQmx.DigitalInput.SignalSource">
+  SignalSource
+  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/DigitalInput.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the optional source terminal of the clock. If not specified,
+the internal clock of the device will be used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SignalSource { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Bonsai_DAQmx_DigitalInput_Generate_" data-uid="Bonsai.DAQmx.DigitalInput.Generate*"></a>
+
+  <h3 id="Bonsai_DAQmx_DigitalInput_Generate" data-uid="Bonsai.DAQmx.DigitalInput.Generate">
+  Generate()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/DigitalInput.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reads an observable sequence of logical values from one or more
+DAQmx digital input lines.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IObservable&lt;Mat&gt; Generate()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;<a class="xref" href="https://horizongir.github.io/opencv.net/api/OpenCV.Net.Mat.html">Mat</a>&gt;</dt>
+    <dd><p>A sequence of 2D <a class="xref" href="https://horizongir.github.io/opencv.net/api/OpenCV.Net.Mat.html">Mat</a> objects storing the logical values.
+Each row corresponds to a channel in the acquisition task, and each column
+to a sample from each of the channels. The order of the channels follows
+the order in which you specify the channels in the <a class="xref" href="Bonsai.DAQmx.DigitalInput.html#Bonsai_DAQmx_DigitalInput_Channels">Channels</a>
+property. Each sample can represent either a single line or a bitmask
+representing the state of all digital lines in a single port, depending
+on the configuration of the virtual channel.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Bonsai_DAQmx_DigitalInput_Generate_" data-uid="Bonsai.DAQmx.DigitalInput.Generate*"></a>
+
+  <h3 id="Bonsai_DAQmx_DigitalInput_Generate__1_System_IObservable___0__" data-uid="Bonsai.DAQmx.DigitalInput.Generate``1(System.IObservable{``0})">
+  Generate&lt;TSource&gt;(IObservable&lt;TSource&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/DigitalInput.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reads an observable sequence of logical values from one or more
+DAQmx digital input lines, where each new buffer is emitted only
+when an observable sequence emits a notification.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IObservable&lt;Mat&gt; Generate&lt;TSource&gt;(IObservable&lt;TSource&gt; source)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>source</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;TSource&gt;</dt>
+    <dd><p>The sequence containing the notifications used for emitting sample buffers.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iobservable-1">IObservable</a>&lt;<a class="xref" href="https://horizongir.github.io/opencv.net/api/OpenCV.Net.Mat.html">Mat</a>&gt;</dt>
+    <dd><p>A sequence of 2D <a class="xref" href="https://horizongir.github.io/opencv.net/api/OpenCV.Net.Mat.html">Mat</a> objects storing the logical values.
+Each row corresponds to a channel in the acquisition task, and each column
+to a sample from each of the channels. The order of the channels follows
+the order in which you specify the channels in the <a class="xref" href="Bonsai.DAQmx.DigitalInput.html#Bonsai_DAQmx_DigitalInput_Channels">Channels</a>
+property. Each sample can represent either a single line or a bitmask
+representing the state of all digital lines in a single port, depending
+on the configuration of the virtual channel.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TSource</code></dt>
+    <dd><p>The type of the elements in the <code class="paramref">source</code> sequence.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/banchan86/daqmx_docs/blob/docfx-update/src/Bonsai.DAQmx/DigitalInput.cs/#L15" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          &copy; 2024 Bonsai Foundation CIC and Contributors. Made with <a href="https://dotnet.github.io/docfx">docfx</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
